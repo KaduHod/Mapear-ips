@@ -1,8 +1,9 @@
 import TreverseIps from "./treverseNetwork.js"
+import {writeFile} from 'fs/promises'
 async function main(){
-	TreverseIps.verbose = true;
+	TreverseIps.verbose = false;
 	const result = await TreverseIps.treverse();
-	console.log(result)
+	await writeFile('./ips.txt', result.join('\n'))
 }
 
 main();

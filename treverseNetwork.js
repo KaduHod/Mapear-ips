@@ -50,6 +50,7 @@ export default class TreverseIps {
 				if(err || stderr) {
 					return err ? reject(err) : reject(stderr);
 				}
+				console.log(`Connect >> ${ip}`)
 				stdout.search('100% packet loss,') != -1 ? resolve(false) : resolve(ip);
 			})
 		})
